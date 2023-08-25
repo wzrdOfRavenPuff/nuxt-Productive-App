@@ -1,5 +1,5 @@
 <template>
-  <ul class="bg-pink-200 rounded p-2">
+  <ul class="rounded p-2">
     <li v-for="item in list" :key="item.id">
       <span
         v-if="item.subItems"
@@ -8,13 +8,13 @@
         >{{ item.open ? '/\\' : '\\/' }}</span
       >
       <span v-else class="ml-5"></span>
-      <InputCheckbox
+      <InputCheckBox
         :id="'checkbox-' + item.id"
         v-model="item.checked"
         :label="
           item.subItems ? item.topic + ':' : item.topic + ': ' + item.label
         "
-        :class="item.checked ? 'line-through' : ''"
+        :class="{ 'line-through': item.checked, 'font-bold': item.important }"
         :disabled="item.disabled"
         checkBoxClass="bg-red-500 text-yellow-500 focus:ring-green-500 active:ring-purple-500"
       >
@@ -24,22 +24,24 @@
             v-for="subitem in item.label"
             :key="item.id + '-' + subitem.id"
           >
-            <InputCheckbox
+            <InputCheckBox
               :id="'checkbox-' + item.id + '-' + subitem.id"
               v-model="subitem.checked"
               :disabled="subitem.disabled"
               :label="subitem.label"
-              :class="subitem.checked ? 'line-through' : ''"
-            ></InputCheckbox>
+              :class="{
+                'line-through': subitem.checked,
+                'font-bold': subitem.important,
+              }"
+            ></InputCheckBox>
           </li>
         </ul>
-      </InputCheckbox>
+      </InputCheckBox>
     </li>
   </ul>
 </template>
 
 <script setup>
-const textField = ref(undefined);
 const list = ref([
   {
     id: 0,
@@ -81,61 +83,48 @@ const list = ref([
     subItems: true,
     topic: 'default',
     label: [
+      { id: 1, checked: true, label: 'add common tailwind css' },
       {
-        id: 1,
+        id: 2,
         checked: false,
-        label: 'add games submenu on navbar',
+        label: 'add todo read to json file',
+        important: true,
       },
-      { id: 2, checked: true, label: 'add common tailwind css' },
-      { id: 3, checked: false, label: 'add vue use' },
-      { id: 4, checked: false, label: 'add dark mode' },
+      {
+        id: 3,
+        checked: false,
+        label: 'add todo write to json file',
+        important: true,
+      },
+      { id: 4, checked: false, label: 'add vue use' },
+      { id: 5, checked: false, label: 'add dark mode' },
     ],
   },
   {
     id: 2,
-    checked: false,
+    checked: true,
     open: false,
-    subItems: true,
-    topic: 'mastermind',
-    label: [
-      {
-        id: 1,
-        checked: false,
-        label: 'add count on how many guesses where needed',
-      },
-      { id: 2, checked: true, label: 'beautify' },
-    ],
-  },
-  {
-    id: 3,
-    checked: false,
-    disabled: false,
-    open: false,
-    subItems: true,
-    topic: 'tictactoe',
-    label: [
-      { id: 1, checked: false, label: 'switch start player' },
-      { id: 2, checked: false, label: 'beautify' },
-    ],
-  },
-  {
-    id: 4,
-    checked: false,
-    open: false,
-    subItems: true,
-    topic: 'new game ideas',
-    label: [
-      { id: 1, checked: false, topic: 'default', label: 'add minesweeper' },
-      { id: 2, checked: false, topic: 'default', label: 'add memory' },
-    ],
+    subItems: false,
+    topic: 'topic',
+    label: 'label',
+    important: true,
   },
   {
     id: 5,
     checked: false,
-    open: false,
-    subItems: false,
-    topic: 'new game ideas',
-    label: 'add minesweeper',
+    open: true,
+    subItems: true,
+    topic: 'weekplanner',
+    label: [
+      { id: 1, checked: false, label: 'add page' },
+      { id: 2, checked: false, label: 'add overview' },
+      { id: 3, checked: false, label: 'add input for hours' },
+      { id: 4, checked: false, label: 'add import from toggle' },
+      { id: 5, checked: false, label: 'add ' },
+      { id: 6, checked: false, label: 'add ' },
+      { id: 7, checked: false, label: 'add ' },
+      { id: 8, checked: false, label: 'add ' },
+    ],
   },
   {
     id: 6,
