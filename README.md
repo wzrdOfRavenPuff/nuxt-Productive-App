@@ -1,4 +1,4 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 Productive App
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
@@ -40,3 +40,15 @@ npm run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Info
+
+### Todo list
+
+A functional todo list that writes it's todo's in a specified json file.
+
+### Weekplanner
+
+A weekplanner to know how much you worked, how much you still have to work this week. This come with an import functionality to import from toggl.
+
+The weekplanner also comes with an overview to see what you worked earlier. Future plans for this include a graph overview and a filter.
