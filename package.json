@@ -10,10 +10,13 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.6.0",
+    "@types/node": "^18.17.3",
     "@vueuse/core": "^10.1.2",
     "@vueuse/nuxt": "^10.1.2",
-    "@types/node": "^18.17.3",
     "nuxt": "^3.6.5",
     "nuxt-icon": "^0.5.0"
+  },
+  "dependencies": {
+    "vue-cal": "^4.8.1"
   }
 }
