@@ -9,6 +9,15 @@
     </ul>
   </div>
   <h3>Select one of the following:</h3>
-  <ul class="list"></ul>
-</template>
+  <ul class="list">
+    <li>
+      <NuxtLink to="/todo">Todo</NuxtLink>
+    </li>
+    <li>
+      <NuxtLink to="/weekplanner">Weekplanner</NuxtLink>
+    </li>
+    <li>
+      <NuxtLink to="/calendar">Calendar</NuxtLink>
+    </li>
+  </ul></template>
 <script setup></script>

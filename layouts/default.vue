@@ -6,6 +6,7 @@
         <ul class="">
           <CommonDarkModeIcon></CommonDarkModeIcon>
           <li><NuxtLink to="/todo">Todo</NuxtLink></li>
+          <li><NuxtLink to="/calendar">Calendar</NuxtLink></li>
         </ul>
       </nav>
     </header>
@@ -17,5 +18,7 @@
     </footer> -->
   </div>
 </template>
-<script setup></script>
+<script setup>
+
+</script>
 <style scoped></style>
