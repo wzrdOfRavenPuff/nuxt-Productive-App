@@ -19,5 +19,9 @@
     <li>
       <NuxtLink to="/calendar">Calendar</NuxtLink>
     </li>
-  </ul></template>
+    <li>
+      <NuxtLink to="/rocketbook">Rocketbook</NuxtLink>
+    </li>
+  </ul>
+</template>
 <script setup></script>
