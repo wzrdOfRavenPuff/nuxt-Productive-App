@@ -1,0 +1,34 @@
+[
+  {
+    "id": 0,
+    "checked": true,
+    "disabled": false,
+    "open": false,
+    "subItems": true,
+    "topic": "checkbox",
+    "label": [
+      {
+        "id": 1,
+        "checked": true,
+        "disabled": false,
+        "label": "add checkbox component"
+      },
+      { "id": 2, "checked": true, "label": "add label class" },
+      { "id": 3, "checked": true, "label": "add slot" },
+      { "id": 4, "checked": true, "label": "add checkbox classes" },
+      {
+        "id": 5,
+        "checked": true,
+        "disabled": false,
+        "label": "add model as array (so as text)",
+        "value": "testText"
+      },
+      {
+        "id": 6,
+        "checked": true,
+        "label": "add states (default, indeterminate, disabled)"
+      },
+      { "id": 7, "checked": true, "label": "add label slot" }
+    ]
+  }
+]

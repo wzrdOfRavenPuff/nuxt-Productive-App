@@ -1,11 +1,11 @@
 <template>
   <ul class="rounded p-2">
-    <li v-for="item in list" :key="item.id">
+    <li v-for="item in todos" :key="item.id">
       <span
         v-if="item.subItems"
         @click="item.open = !item.open"
         class="mr-2 cursor-pointer"
-        >{{ item.open ? '/\\' : '\\/' }}</span
+        >{{ item.open ? "/\\" : "\\/" }}</span
       >
       <span v-else class="ml-5"></span>
       <InputCheckBox
@@ -42,6 +42,9 @@
 </template>
 
 <script setup>
+const getTodos = () =>
+  import("~/static/data/todo.json").then((m) => m.default || m);
+
 const list = ref([
   {
     id: 0,
@@ -49,30 +52,30 @@ const list = ref([
     disabled: false,
     open: false,
     subItems: true,
-    topic: 'checkbox',
+    topic: "checkbox",
     label: [
       {
         id: 1,
         checked: true,
         disabled: false,
-        label: 'add checkbox component',
+        label: "add checkbox component",
       },
-      { id: 2, checked: true, label: 'add label class' },
-      { id: 3, checked: true, label: 'add slot' },
-      { id: 4, checked: true, label: 'add checkbox classes' },
+      { id: 2, checked: true, label: "add label class" },
+      { id: 3, checked: true, label: "add slot" },
+      { id: 4, checked: true, label: "add checkbox classes" },
       {
         id: 5,
         checked: true,
         disabled: false,
-        label: 'add model as array (so as text)',
-        value: 'testText',
+        label: "add model as array (so as text)",
+        value: "testText",
       },
       {
         id: 6,
         checked: true,
-        label: 'add states (default, indeterminate, disabled)',
+        label: "add states (default, indeterminate, disabled)",
       },
-      { id: 7, checked: true, label: 'add label slot' },
+      { id: 7, checked: true, label: "add label slot" },
     ],
   },
   {
@@ -81,23 +84,23 @@ const list = ref([
     disabled: false,
     open: true,
     subItems: true,
-    topic: 'default',
+    topic: "default",
     label: [
-      { id: 1, checked: true, label: 'add common tailwind css' },
+      { id: 1, checked: true, label: "add common tailwind css" },
       {
         id: 2,
         checked: false,
-        label: 'add todo read to json file',
+        label: "add todo read to json file",
         important: true,
       },
       {
         id: 3,
         checked: false,
-        label: 'add todo write to json file',
+        label: "add todo write to json file",
         important: true,
       },
-      { id: 4, checked: false, label: 'add vue use' },
-      { id: 5, checked: false, label: 'add dark mode' },
+      { id: 4, checked: false, label: "add vue use" },
+      { id: 5, checked: false, label: "add dark mode" },
     ],
   },
   {
@@ -105,8 +108,8 @@ const list = ref([
     checked: true,
     open: false,
     subItems: false,
-    topic: 'topic',
-    label: 'label',
+    topic: "topic",
+    label: "label",
     important: true,
   },
   {
@@ -114,16 +117,16 @@ const list = ref([
     checked: false,
     open: true,
     subItems: true,
-    topic: 'weekplanner',
+    topic: "weekplanner",
     label: [
-      { id: 1, checked: false, label: 'add page' },
-      { id: 2, checked: false, label: 'add overview' },
-      { id: 3, checked: false, label: 'add input for hours' },
-      { id: 4, checked: false, label: 'add import from toggle' },
-      { id: 5, checked: false, label: 'add ' },
-      { id: 6, checked: false, label: 'add ' },
-      { id: 7, checked: false, label: 'add ' },
-      { id: 8, checked: false, label: 'add ' },
+      { id: 1, checked: false, label: "add page" },
+      { id: 2, checked: false, label: "add overview" },
+      { id: 3, checked: false, label: "add input for hours" },
+      { id: 4, checked: false, label: "add import from toggle" },
+      { id: 5, checked: false, label: "add " },
+      { id: 6, checked: false, label: "add " },
+      { id: 7, checked: false, label: "add " },
+      { id: 8, checked: false, label: "add " },
     ],
   },
   {
@@ -131,21 +134,23 @@ const list = ref([
     checked: false,
     open: false,
     subItems: true,
-    topic: 'components',
+    topic: "components",
     label: [
-      { id: 1, checked: true, label: 'add checkbox' },
-      { id: 2, checked: false, label: 'add textfield' },
-      { id: 3, checked: false, label: 'add select' },
-      { id: 4, checked: false, label: 'add autocomplete' },
-      { id: 5, checked: false, label: 'add radiobutton' },
-      { id: 6, checked: false, label: 'add file input' },
-      { id: 7, checked: false, label: 'add file input drag and drop?' },
-      { id: 8, checked: false, label: 'add switch' },
-      { id: 9, checked: false, label: 'add slider' },
-      { id: 10, checked: false, label: 'add slider with range' },
-      { id: 11, checked: false, label: 'add textarea' },
-      { id: 12, checked: false, label: 'add icon' },
+      { id: 1, checked: true, label: "add checkbox" },
+      { id: 2, checked: false, label: "add textfield" },
+      { id: 3, checked: false, label: "add select" },
+      { id: 4, checked: false, label: "add autocomplete" },
+      { id: 5, checked: false, label: "add radiobutton" },
+      { id: 6, checked: false, label: "add file input" },
+      { id: 7, checked: false, label: "add file input drag and drop?" },
+      { id: 8, checked: false, label: "add switch" },
+      { id: 9, checked: false, label: "add slider" },
+      { id: 10, checked: false, label: "add slider with range" },
+      { id: 11, checked: false, label: "add textarea" },
+      { id: 12, checked: false, label: "add icon" },
     ],
   },
 ]);
+
+console.log(getTodos());
 </script>
